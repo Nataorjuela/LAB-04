@@ -1,3 +1,6 @@
+## NATALIA ORJUELA
+## DIEGO MACANA
+
 ### Escuela Colombiana de Ingeniería
 
 ### Procesos de Desarrollo de Software
