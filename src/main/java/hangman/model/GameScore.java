@@ -9,8 +9,11 @@ package hangman.model;
  *
  * @author natao
  */
-public class GameScore {
-    public static int calculateScore(int correctCount,int incorrectCount){
-    return 0;
+public interface GameScore {
+    public int calculateScore(int correctCount,int incorrectCount);
+    
+    
     }
+    
 }
+      

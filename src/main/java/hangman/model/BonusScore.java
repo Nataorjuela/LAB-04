@@ -13,7 +13,7 @@ package hangman.model;
  * @throws puntaje menor a 0 
  * 
  */
-public class BonusScore extends GameScore{
+public class BonusScore implements GameScore{
     public int calculateScore(int correctCount,int incorrectCount){
     return 0;
     }
