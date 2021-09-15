@@ -10,7 +10,7 @@ package hangman.model;
  * @author natao
  */
 public class GameScore {
-    public int calculateScore(int correctCount,int incorrectCount){
+    public static int calculateScore(int correctCount,int incorrectCount){
     return 0;
     }
 }
