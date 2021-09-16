@@ -13,7 +13,24 @@ package hangman.model;
  * @throws puntaje menos a 0
  */
 public class PowerScore implements GameScore {
-    public int calculateScore(int correctCount,int incorrectCount){
-      
-    return 0;}
+    @Override
+    public int CalculateScore(int correctCount,int incorrectCount)throws ScoreException{
+        int finalScore = 0;
+        if(correctCount < 0 || incorrectCount < 0) {
+            throw new ScoreException(ScoreException.INCORRECT_PARAMETERS);}
+        if(correctCount > 0){
+            for(int i = 1; i < correctCount; i++){
+                finalScore = (int)(finalScore + Math.pow(5,i));
+            }
+        }
+        if(incorrectCount > 0 ){
+            finalScore = finalScore - 8 * incorrectCount;
+        }
+        if (finalScore >= 500){ 
+            finalScore = 500;}
+        if (finalScore < 0){
+            finalScore = 0;}
+        
+        return finalScore;
+    }      
 }

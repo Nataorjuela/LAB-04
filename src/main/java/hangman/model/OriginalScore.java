@@ -8,6 +8,9 @@ package hangman.model;
 /**
  *
  * @author natao
+ *  @param CorrectCount numero de letras correctas
+ *  @param IncorrectCount numero de letras incorrectas
+ *  @return score
  * @pre
  * Es el esquema actual, se inicia con 100 puntos.
  *No se bonifican las letras correctas.
@@ -20,10 +23,13 @@ package hangman.model;
  */
 public class OriginalScore implements GameScore {
     @Override
-    public int calculateScore(int correctCount,int incorrectCount) throws ScoreException{
+    public int CalculateScore(int correctCount,int incorrectCount) throws ScoreException{
+        int finalScore=100;
         if(incorrectCount>0){
-          int finalScore = finalScore-incorrectCount*10;
-        
-         
-        return finalScore;}
+         finalScore = finalScore-incorrectCount*10;
+        }
+        if(correctCount == 0 ){ 
+            finalScore = 0;}
+        return finalScore;
+    }
 }

@@ -4,10 +4,14 @@
  * and open the template in the editor.
  */
 package hangman.model;
+
 /**
  *
  * @author natao
  */
-public interface GameScore{
-   public int CalculateScore(int correctCount,int incorrectCount)throws ScoreException;
+public class ScoreException extends Exception{
+    public static final String INCORRECT_PARAMETERS = "valores negativos";
+    public ScoreException(String mensaje){
+        super(mensaje);
+    }
 }
