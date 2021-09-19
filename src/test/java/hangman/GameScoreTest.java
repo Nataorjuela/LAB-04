@@ -84,30 +84,23 @@ public class GameScoreTest {
     @Test
     public void validPowerScoreCorrectMaxScore() throws ScoreException {
         GameScore play = new PowerScore();
-        int finalScore = play.CalculateScore(4,1);
+        int finalScore = play.CalculateScore(5,1);
         Assert.assertTrue(finalScore == 500);
     }
-
-    @Test
-    public void validPowerScore() throws ScoreException {
-        GameScore play = new PowerScore();
-        int finalScore = play.CalculateScore(3,1);
-        Assert.assertTrue(finalScore == 147);
-    }
-   
+    
     @Test
     public void validateIncorrectParameters() {
         GameScore play;
         try {
             play = new OriginalScore();
-            play.CalculateScore(-10, -1);
+            play.CalculateScore(-15, -2);
             Assert.assertTrue(false);
         } catch (ScoreException e) {
             Assert.assertTrue(true);
         }
         try {
             play = new PowerScore();
-            play.CalculateScore(-5, -8);
+            play.CalculateScore(-2, -10);
             Assert.assertTrue(false);
         } catch (ScoreException e) {
             Assert.assertTrue(true);
@@ -115,7 +108,7 @@ public class GameScoreTest {
 
         try {
             play = new BonusScore();
-            play.CalculateScore(-1, -30);
+            play.CalculateScore(-5, -1);
             Assert.assertTrue(false);
         } catch (ScoreException e) {
             Assert.assertTrue(true);
