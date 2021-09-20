@@ -25,6 +25,7 @@ public class OriginalScore implements GameScore {
     @Override
     public int CalculateScore(int correctCount,int incorrectCount) throws ScoreException{
         int finalScore=100;
+         if(correctCount < 0 || incorrectCount < 0) {throw new ScoreException(ScoreException.INCORRECT_PARAMETERS);}
         if(incorrectCount>0){
          finalScore = finalScore-incorrectCount*10;
         }
